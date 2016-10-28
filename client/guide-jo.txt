@@ -1,0 +1,4 @@
+npm install karma
+npm install grunt-karma 
+npm install karma-jasmine --save-dev
+npm install phantomjs jasmine-core jasmine

@@ -1,0 +1,8 @@
+navbar-nav.home .home,
+navbar-nav.projects .projects,
+navbar-nav.services .services,
+ navbar-nav.register .register,
+nav.login .login,
+nav.contact .contact{
+	background-color:#e35885;
+}
