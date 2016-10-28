@@ -9,10 +9,9 @@
  */
 angular.module('clientApp')
   .controller('ContactCtrl', function($scope, $http) {
-     $scope.filteredTodos = []
-     ,$scope.names = []
+     $scope.names = []
     ,$scope.currentPage = 1
-    ,$scope.numPerPage = 4
+    ,$scope.numPerPage = 5
     ,$scope.maxSize = 5;
    $http.get('app/users')
     .error(function(data, status) {
@@ -35,13 +34,12 @@ angular.module('clientApp')
     .success(function(data) {
        console.log(data);
        $scope.names = data;
-        $scope.filteredTodos = $scope.names;
+       
     });
     
-    $scope.$watch("currentPage + numPerPage", function() {
-    var begin = (($scope.currentPage - 1) * $scope.numPerPage)
-    , end = begin + $scope.numPerPage;
-
-    $scope.filteredTodos = $scope.names.slice(begin, end);
-  });
+     $scope.sort = function(keyname){
+        $scope.sortKey = keyname;   //set the sortKey to the param passed
+        $scope.reverse = !$scope.reverse; //if true make it false and vice versa
+    }
+   
   });
