@@ -12,6 +12,7 @@ angular.module('clientApp')
      $scope.names = []
     ,$scope.currentPage = 1
     ,$scope.numPerPage = 5
+    ,$scope.pageSize = 5
     ,$scope.maxSize = 5;
    $http.get('app/users')
     .error(function(data, status) {
