@@ -16,7 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angularUtils.directives.dirPagination',
+    'lazyload'
+    
   ]).directive('activeLink', function ($location) {
     return {
        restrict: 'A', //use as attribute 
@@ -41,6 +44,9 @@ angular
   };
 })
   .config(function ($routeProvider) {
+     //templatePath = 'bower_components/angular-utils-pagination/dirPagination.tpl.html;
+     //paginationTemplateProvider.setPath('views/dirPagination.tpl.html');
+     
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
